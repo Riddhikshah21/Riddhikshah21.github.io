@@ -1483,8 +1483,8 @@ button:hover .shopping_bag {
 
 .figma {
     filter: var(--nav-menu-icon);
-    height: 50px;
-    width: 50px;
+    max-height: 50px;
+    max-width: 50px;
 }
 
 .hard_skill_group:hover .figma {
