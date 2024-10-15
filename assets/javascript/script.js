@@ -114,14 +114,39 @@ document.addEventListener("DOMContentLoaded", function () {
 // Dark/ Light Mode Toggle end
 
 // Portfolio Pop-up
+// $(".pop-up").on("click", function () {
+//     $(".overlay").addClass("is-on");
+// });
+
+// $("#close").on("click", function () {
+//     $(".overlay").removeClass("is-on");
+// });
+
+// Open the pop-up based on the project ID
 $(".pop-up").on("click", function () {
-    $(".overlay").addClass("is-on");
+    const projectId = $(this).attr("id"); // Get the ID of the clicked element
+    console.log(`Opening pop-up with ID: ${projectId}`);
+    $(`#${projectId}.overlay`).addClass("is-on"); // Target the specific overlay
 });
 
-$("#close").on("click", function () {
-    $(".overlay").removeClass("is-on");
+// Close the pop-up
+$(".overlay #close").on("click", function () {
+    $(this).closest(".overlay").removeClass("is-on"); // Close the nearest overlay
 });
+
 // Portfolio Pop-up end
+
+// Delegate click event for dynamically created elements
+// $(document).on("click", ".pop-up", function () {
+//     var projectId = $(this).closest('.fade_up').data('project');  // Get the project ID
+//     $(".overlay").removeClass("is-on");  // Hide any other open pop-up
+//     $('.overlay[data-project="' + projectId + '"]').addClass("is-on");  // Show the specific pop-up
+// });
+
+// // Close pop-up
+// $(document).on("click", "#close", function () {
+//     $(this).closest('.overlay').removeClass("is-on");
+// });
 
 // Share Btn
 $(document).ready(function () {
@@ -319,3 +344,167 @@ window.addEventListener("load", () => {
 $(function () {
     $('.circlechart').circlechart();
 });
+
+projects1 = [
+    {
+      id: "project1",
+      title: "Steam game recommendation",
+      image: "../assets/images/content_img.jpg",
+      description: "",
+      bigImage: "../assets/images/portfolio_big_img.jpg",
+      details: {
+        name: "Steam game recommendation",
+        // createdBy: "Riddhi",
+        date: "16/07/2023",
+        // client: "Rayan Patrick",
+        category: "Machine learning model",
+        content: "Developed a Flask RESTful API for a game recommendation model based on users' past purchases. Performed exploratory data analysis using Pyspark on large dataset, achieving 84% accuracy.",
+        subImages: [
+          "../assets/images/project_sub_images1.jpg",
+          "../assets/images/project_sub_images2.jpg"
+        ]
+      }
+    },
+    {
+      id: "project2",
+      title: "Face mask detection",
+      image: "../assets/images/content_img.jpg",
+      description: "Detecting if a person is wearing mask or not.",
+      bigImage: "../assets/images/portfolio_big_img.jpg",
+      details: {
+        name: "Face mask detection",
+        // createdBy: "Cuberto",
+        date: "26/08/2022",
+        // client: "Rayan Patrick",
+        category: "Deep learning model",
+        content: "Trained an AI model using Convolutional Neural Network to detected mask-wearing and categorize mask types. Utilized Python libraries like NumPy and Pandas and achieved an accuracy of 73.4% on the validation model.",
+        subImages: [
+          "../assets/images/project_sub_images1.jpg",
+          "../assets/images/project_sub_images2.jpg"
+        ]
+      }
+    },
+];
+
+projects2 = [
+    {
+        id: "project3",
+        title: "Pulse rate detection",
+        image: "../assets/images/content_img.jpg",
+        description: "Branding project for a corporate client.",
+        bigImage: "../assets/images/portfolio_big_img.jpg",
+        details: {
+          name: "Pulse rate detection",
+          // createdBy: "Cuberto",
+          date: "20/12/2021",
+          // client: "Rayan Patrick",
+          category: "Computer vision model",
+          content: "Ornare sagittis blandit imperdiet cursus risus. Amet proin cras mattis arcu pellentesque lorem sagittis.",
+          subImages: [
+            "../assets/images/project_sub_images1.jpg",
+            "../assets/images/project_sub_images2.jpg"
+          ]
+        }
+      },
+];
+
+// window.addEventListener('DOMContentLoaded', () => {
+//     function renderProjects(projects, containerSelector) {
+//         let projectListHtml = '';
+//         let popupsHtml = '';
+
+//         projects.forEach((project) => {
+//             const createdBy = project.details.createdBy || "N/A";
+//             const client = project.details.client || "N/A";
+
+//             const subImagesHtml = project.details.subImages
+//                 .map(image => `<div><img class="project_sub_images" src="${image}" alt="Sub Image"></div>`)
+//                 .join('');
+
+//             projectListHtml += `
+//                 <div class="content_portfolio pop-up" data-project="${project.id}">
+//                     <div class="content-overlay"></div>
+//                     <img class="content-image" src="${project.image}" alt="${project.title}">
+//                     <div class="content-details fadeIn-bottom">
+//                         <h3 class="content-title">${project.title}</h3>
+//                         <p class="content-text">${project.description || "No description available"}</p>
+//                     </div>
+//                     <h4 class="project_name font_w_font_s">${project.title}</h4>
+//                 </div>
+//             `;
+
+//             popupsHtml += `
+//                 <div class="overlay" id="${project.id}" style="display: none;">
+//                     <div class="content2">
+//                         <div class="close-btn" data-close="${project.id}">
+//                             <i class="ri-close-fill"></i>
+//                         </div>
+//                         <img class="pop-up-video" src="${project.bigImage}" alt="${project.title} image">
+//                         <div class="corporate_main">
+//                             <div class="corporate_sub">
+//                                 <h3 class="project_name corp font_w_font_s">${project.details.name}</h3>
+//                                 <p class="project_name_sub font_w_font_s1">${project.details.content}</p>
+//                             </div>
+//                             <div class="cuberto_main">
+//                                 <p class="created_by">Created By:</p>
+//                                 <p class="cuberto">${createdBy}</p>
+//                             </div>
+//                             <div class="cuberto_main">
+//                                 <p class="created_by">Date:</p>
+//                                 <p class="cuberto">${project.details.date}</p>
+//                             </div>
+//                             <div class="cuberto_main">
+//                                 <p class="created_by">Client:</p>
+//                                 <p class="cuberto">${client}</p>
+//                             </div>
+//                             <div class="cuberto_main">
+//                                 <p class="created_by">Categories:</p>
+//                                 <p class="cuberto">${project.details.category}</p>
+//                             </div>
+//                         </div>
+//                         <div class="project_second">${subImagesHtml}</div>
+//                         <div class="pop-up-footer">
+//                             <button class="download_cv view_project font_w_font_s"
+//                                 onClick="window.open('https://themeforest.net/user/the_krishna');">
+//                                 <i class="ri-eye-line"></i> View Project
+//                             </button>
+//                         </div>
+//                     </div>
+//                 </div>
+//             `;
+//         });
+
+//         document.querySelector(containerSelector).innerHTML = projectListHtml;
+//         document.querySelector('.popup-container').innerHTML = popupsHtml;
+
+//         document.querySelectorAll('.content_portfolio').forEach((project) => {
+//             project.addEventListener('click', () => {
+//                 const projectId = project.getAttribute('data-project');
+//                 const popup = document.getElementById(projectId);
+//                 console.log(projectId)
+//                 if (popup) {
+//                     popup.style.display = 'block';
+//                 } else {
+//                     console.error(`Popup with ID ${projectId} not found.`);
+//                 }
+//             });
+//         });
+
+//         document.querySelectorAll('.close-btn').forEach((btn) => {
+//             btn.addEventListener('click', () => {
+//                 const projectId = btn.getAttribute('data-close');
+//                 const popup = document.getElementById(projectId);
+
+//                 if (popup) {
+//                     popup.style.display = 'none';
+//                 } else {
+//                     console.error(`Popup with ID ${projectId} not found.`);
+//                 }
+//             });
+//         });
+//     }
+
+//     renderProjects(projects1, '.content_main1');
+//     renderProjects(projects2, '.content_main2');
+// });
+

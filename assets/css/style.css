@@ -905,6 +905,7 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 25px;
 }
 
 /*-----------------------[ 8.Fix Image CSS ]------------------------*/
@@ -1482,6 +1483,8 @@ button:hover .shopping_bag {
 
 .figma {
     filter: var(--nav-menu-icon);
+    height: 50px;
+    width: 50px;
 }
 
 .hard_skill_group:hover .figma {
@@ -1499,17 +1502,17 @@ button:hover .shopping_bag {
 .content_main1 {
     display: grid;
     justify-items: start;
-    width: 330px;
-    height: 420px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    height: auto; /* Allow height to adjust */
     gap: 30px;
 }
 
-.content_main2 {
+/* .content_main2 {
     display: grid;
     gap: 30px;
     justify-items: start;
     width: 330px;
-}
+} */
 
 .content_portfolio {
     position: relative;
@@ -2122,7 +2125,8 @@ ul {
 
 .cuberto_main {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 10px;
 }
 
 .created_by,
