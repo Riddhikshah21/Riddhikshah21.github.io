@@ -2687,3 +2687,16 @@ ul {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
+
+/* New media query for large screens (above 1600px) */
+@media only screen and (min-width: 1600px) {
+    .popup_gallery {
+        max-width: 70%; /* Adjust the width to fit larger screens */
+        height: 80vh;   /* Adjust height as per screen size */
+        top: 50px;      /* Ensure proper top alignment */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, 1fr); /* Increase number of columns */
+    }
+}

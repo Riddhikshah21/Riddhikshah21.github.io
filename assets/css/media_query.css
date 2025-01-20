@@ -955,3 +955,85 @@
         top: 30px;
     }
 }
+
+@media(min-width: 1601px) {
+    section#card_main {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0 0 0 60px;
+        padding: 80px 0;
+    }
+
+    .olivia-img {
+        border-radius: 40px 40px 40px 40px;
+        max-width: 100%;
+    }
+
+    .right_card_main {
+        border-radius: 40px 40px 40px 40px;
+    }
+
+    .sidebar {
+        width: 78px;
+        background: var(--card-background);
+        transition: all 0.5s ease;
+        border-radius: 30px;
+        position: fixed;
+        left: 40px;
+        top: 0;
+        transform: translate(0%, 30%);
+    }
+
+    .ul-header {
+        position: fixed;
+        right: 40px;
+        top: 40px;
+    }
+
+    .imgBox {
+        height: 100%;
+        width: 400px;
+    }
+
+    .hire_me {
+        width: 350px;
+    }
+
+    .olivia_moswa {
+        font-size: 45px;
+    }
+
+    .designer {
+        margin-bottom: 20px;
+    }
+
+    .bio_contain {
+        padding: 10px 20px 13px 20px;
+    }
+
+    .olivia_bio {
+        border-radius: 40px 40px 40px 40px;
+    }
+
+    #icetab-content {
+        transform: translateX(0px);
+    }
+
+    .content_main {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .skill_circle_main {
+        justify-items: center;
+        gap: 25px;
+        padding-top: 25px;
+    }
+
+    .counter2 {
+        font-size: 45px;
+        line-height: 60px;
+    }
+}
