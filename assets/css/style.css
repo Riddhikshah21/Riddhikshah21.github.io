@@ -1727,6 +1727,56 @@ button:hover .shopping_bag {
     line-height: 20px;
     text-transform: uppercase;
 }
+/*-----------------------[ Publication Section CSS ]------------------------*/
+
+/* Layout */
+.publications-section .skill_circle_main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.publications-section .publication-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.publications-section .publication-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.publications-section .publication-item h4 {
+  margin-bottom: 10px;
+}
+
+/* Description (fixed height using clamp) */
+.publications-section .publication-item p {
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+/* Link aligned to bottom */
+.publications-section .publication-item a {
+  margin-top: auto;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
 
 /*-----------------------[ 16.Blog Section CSS ]------------------------*/
 .blog_section_main {
